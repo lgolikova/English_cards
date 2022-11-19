@@ -1,5 +1,5 @@
 const list = [{
-    id: "1",
+    id: 1,
     en: "apple",
     ru: "яблоко",
     transcription: "[æpl]",
