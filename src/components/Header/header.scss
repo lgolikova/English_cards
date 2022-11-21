@@ -1,0 +1,35 @@
+@import "../../assets/styles/variables.scss";
+
+.header,
+.header_logo,
+.header_nav {
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    height: 70px;
+    justify-content: space-between;
+    background: linear-gradient(#eff7f9, #ace0f9);
+    color: $main-fontcolor;
+
+    &_img {
+        width: 50px;
+        margin: 0 30px;
+    }
+
+    &_appname {
+        font-size: 26px;
+    }
+
+    &_nav {
+        margin-right: 30px;
+
+        a {
+            margin-right: 40px;
+            font-size: 18px;
+            text-decoration: none;
+            color: $main-fontcolor;
+        }
+    }
+}
