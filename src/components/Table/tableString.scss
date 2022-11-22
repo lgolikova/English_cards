@@ -1,0 +1,30 @@
+.table_string {
+    display: flex;
+    flex: column;
+    margin: 0 auto;
+    // border-bottom: 1px solid #000;
+
+    & div {
+        margin: 20px 100px 20px 70px;
+        align-items: center;
+        justify-content: center;
+        // border: 1px solid;
+        text-align: center;
+        width: 90px;
+        align-self: center;
+    }
+}
+
+.table_string-container {
+    display: flex;
+    margin: auto;
+
+}
+
+.table_btn-container {
+    display: flex;
+}
+
+.table_gray {
+    background-color: rgba(200, 243, 243, 0.403);
+}

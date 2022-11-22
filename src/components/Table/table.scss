@@ -1,0 +1,16 @@
+.table-container {
+    display: flex;
+    margin-top: 80px;
+    flex-direction: column;
+}
+
+.table-header {
+    display: flex;
+    margin: auto;
+
+    & div {
+        width: 90px;
+        text-align: center;
+        margin: 20px 100px 20px 70px;
+    }
+}
