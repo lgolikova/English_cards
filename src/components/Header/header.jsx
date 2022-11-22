@@ -5,7 +5,7 @@ function Header() {
     return (
         <div className='header'>
             <div className='header_logo'>
-                <img className='header_img' src='studying2.png' alt='logo' />
+                <img className='header_img' src='/images/studying2.png' alt='logo' />
                 <div className='header_appname'>Learning English words</div>
             </div>
             <div className='header_nav'>
