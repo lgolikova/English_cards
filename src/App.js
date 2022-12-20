@@ -4,7 +4,7 @@ import Main from './components/Main/main';
 import Footer from './components/Footer/footer';
 import Card from './components/Card/card';
 import TableString from './components/Table/TableString';
-import '../../cards/src/assets/styles/variables.scss'
+import '../../cards/src/styles/variables.scss'
 import list from './components/list';
 import Table from './components/Table/Table';
 

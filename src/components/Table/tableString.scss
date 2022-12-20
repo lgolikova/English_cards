@@ -26,5 +26,19 @@
 }
 
 .table_gray {
-    background-color: rgba(200, 243, 243, 0.403);
+    background-color: rgba(200, 228, 243, 0.403);
+}
+
+.btn-edit {
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    border: 1px solid #f99185;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.btn-del {
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    border: 1px solid #b12a5b;
+    border-radius: 5px;
+
 }
