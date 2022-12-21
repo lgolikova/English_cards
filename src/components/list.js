@@ -58,6 +58,12 @@ const list = [
     en: "game",
     ru: "игра",
     transcription: "[geim]",
+},
+{
+    id: 11,
+    en: "winter",
+    ru: "зима",
+    transcription: "['wintə]",
 }
 ];
 

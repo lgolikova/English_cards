@@ -14,7 +14,6 @@ function App() {
     <div className="App">
       <Header />
       <Table />
-      {/* {list.map(item => <TableString  en={item.en} ru={item.ru} transcription={item.transcription} />)} */}
     </div>
   );
 }

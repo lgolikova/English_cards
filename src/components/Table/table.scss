@@ -8,10 +8,13 @@
     display: flex;
     margin: auto;
     font-weight: bold;
+    width: 1100px;
+    justify-content: space-around;
 
     & div {
         width: 90px;
         text-align: center;
-        margin: 20px 100px 20px 70px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 }
