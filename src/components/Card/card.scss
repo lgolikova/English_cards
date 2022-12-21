@@ -1,0 +1,44 @@
+.card-container {
+    display: flex;
+}
+
+.card {
+    margin: 70px auto;
+    height: 300px;
+    border: 1px solid rgb(224, 222, 222);
+    width: 250px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+
+    & .card-name {
+        margin-bottom: 10px;
+        font-size: 44px;
+    }
+
+    & .card-transcription {
+        margin-bottom: 15px;
+        color: grey;
+        font-size: 18px;
+    }
+
+    & .card-check_btn {
+        background-color: rgb(30, 192, 30);
+        border-radius: 20px;
+        width: 100px;
+        height: 30px;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    & .card-translation {
+        font-size: 20px;
+        color: rgb(30, 192, 30);
+        font-weight: bold;
+    }
+}
