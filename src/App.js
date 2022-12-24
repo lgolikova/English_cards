@@ -17,6 +17,7 @@ function App() {
       <Table />
       {/* <Card /> */}
       <Game />
+      <Footer />
     </div>
   );
 }

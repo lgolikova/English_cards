@@ -1,0 +1,12 @@
+.footer {
+    height: 50px;
+    justify-content: space-between;
+    background: linear-gradient(#eff7f9, #ace0f9);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    & .copyright {
+        margin-right: 10px;
+    }
+}
