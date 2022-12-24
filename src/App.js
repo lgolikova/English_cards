@@ -7,6 +7,7 @@ import TableString from './components/Table/TableString';
 import '../../cards/src/styles/variables.scss'
 import list from './components/list';
 import Table from './components/Table/Table';
+import Game from './components/Game/game';
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
     <div className="App">
       <Header />
       <Table />
-      <Card />
+      {/* <Card /> */}
+      <Game />
     </div>
   );
 }
