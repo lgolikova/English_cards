@@ -1,16 +1,19 @@
 import React from 'react';
 import "./header.scss";
+import { Link } from "react-router-dom"
 
 function Header() {
     return (
         <div className='header'>
-            <div className='header_logo'>
+
+            <Link to='/' className='header_logo'>
                 <img className='header_img' src='./assets/images/studying2.png' alt='logo' />
                 <div className='header_appname'>Learning English words</div>
-            </div>
+            </Link>
+
             <div className='header_nav'>
-                <a href='#'>Wordlist</a>
-                <a href='#'>Wordcards</a>
+                <Link to='/table'>Wordlist</Link>
+                <Link to='/game'>Wordcards</Link>
             </div>
         </div>
     );

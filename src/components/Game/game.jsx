@@ -14,6 +14,7 @@ function Game(props) {
     const [cardIndex, setCardIndex] = useState(0);
 
     const Next = () => {
+
         if (cardIndex === list.length - 1) {
             setCardIndex(0);
         } else {
