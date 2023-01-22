@@ -11,7 +11,7 @@ function NotFound() {
                 <div className='t404'>404</div>
                 <div className='notfound-title'>UH OH! You're lost.</div>
                 <div className='notfound-text'>The page you are looking for does not exist. How you got here is a mystery. But you can click the button below to go back to the homepage.</div>
-                <button className='btn-404'>HOME</button>
+                <Link to='/table'><button className='btn-404'>HOME</button></Link>
             </div>
         </div>
     );

@@ -5,6 +5,10 @@
     display: flex;
     align-items: center;
     justify-content: end;
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
+
 
     & .copyright {
         margin-right: 10px;
