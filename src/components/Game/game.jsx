@@ -10,7 +10,7 @@ function Game(props) {
 
     const handleCheck = () => {
         setIsCheckMode(!isCheckMode);
-        sumLearnd();
+        sumLearnd(list[cardIndex].id);
     }
 
     const [cardIndex, setCardIndex] = useState(0);
@@ -41,10 +41,20 @@ function Game(props) {
     }, [list[cardIndex].en]);
 
     const [learned, setLearned] = useState(0);
-    const sumLearnd = () => {
-        setLearned(learned + 1);
+    const [learntId, setLearntId] = useState([])
+
+    const sumLearnd = (id) => {
+
+        const arr = [...learntId]
+
+        if (!arr.includes(id)) {
+            arr.push(id)
+        }
+
+        setLearntId(arr)
+        setLearned(arr.length)
     };
-    console.log(learned);
+    console.log(learntId)
 
     return (
         <>
