@@ -8,5 +8,8 @@
         width: 40px;
         cursor: pointer;
     }
+}
 
+.card-check_btn:focus {
+    outline: 2px solid #08afff;
 }

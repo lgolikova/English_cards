@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./game.scss";
 import "../Card/card.scss";
 import list from '../list';
+import { useRef, useEffect } from 'react';
 
 function Game(props) {
 
@@ -32,6 +33,12 @@ function Game(props) {
         setIsCheckMode(false);
     };
 
+    const ref = useRef(null);
+
+    useEffect(() => {
+        ref.current.focus();
+    }, [list[cardIndex].en]);
+
 
     return (
         <>
@@ -41,7 +48,7 @@ function Game(props) {
                     <div className='card'>
                         <div className='card-name'>{list[cardIndex].en}</div>
                         <div className="card-transcription">{list[cardIndex].transcription}</div>
-                        {isCheckMode ? <div className='card-translation'>{list[cardIndex].ru}</div> : <button onClick={handleCheck} className='card-check_btn'>Check</button>}
+                        {isCheckMode ? <div className='card-translation'>{list[cardIndex].ru}</div> : <button onClick={handleCheck} className='card-check_btn' ref={ref}>Check</button>}
                     </div>
                 </div>
                 <img src='./assets/images/right-arrow.png' onClick={Next}></img>
