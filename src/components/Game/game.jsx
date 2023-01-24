@@ -10,6 +10,7 @@ function Game(props) {
 
     const handleCheck = () => {
         setIsCheckMode(!isCheckMode);
+        sumLearnd();
     }
 
     const [cardIndex, setCardIndex] = useState(0);
@@ -39,6 +40,11 @@ function Game(props) {
         ref.current.focus();
     }, [list[cardIndex].en]);
 
+    const [learned, setLearned] = useState(0);
+    const sumLearnd = () => {
+        setLearned(learned + 1);
+    };
+    console.log(learned);
 
     return (
         <>
@@ -49,6 +55,7 @@ function Game(props) {
                         <div className='card-name'>{list[cardIndex].en}</div>
                         <div className="card-transcription">{list[cardIndex].transcription}</div>
                         {isCheckMode ? <div className='card-translation'>{list[cardIndex].ru}</div> : <button onClick={handleCheck} className='card-check_btn' ref={ref}>Check</button>}
+                        {learned ? <div className='words-counter'>learned words: {learned}</div> : ''}
                     </div>
                 </div>
                 <img src='./assets/images/right-arrow.png' onClick={Next}></img>
