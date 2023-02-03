@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./tableString.scss";
 
 function TableString(props) {
@@ -16,25 +16,38 @@ function TableString(props) {
 
     const [btnDisabled, setBtnDisabled] = useState(false);
 
-    const [valueEn, setValueEn] = useState(props.en)
 
-    function handleChange(e) {
-        setValueEn(e.target.value);
-        console.log(valueEn);
+    const [initialValue, setInitialValue] = useState({});
+
+    useEffect(() => {
+        setInitialValue({
+            english: props.en,
+            transcription: props.transcription,
+            russian: props.ru,
+        })
+    }, [props.en, props.transcription, props.ru])
+
+    function getValue(e) {
+        e.preventDefault()
+        const copyInitialValue = { ...initialValue }
+        copyInitialValue[e.target.name] = e.target.value
+        setInitialValue(copyInitialValue)
     }
 
-    function isValid(value) {
-        if (value === '') {
-            setBtnDisabled(true);
-            return false
+    console.log(initialValue);
+
+    function validate(value) {
+        if (value !== '') {
+            return true;
         }
-        return true
-
+        return false;
     }
 
-    const validateEn = isValid(valueEn);
+    const validateFlag = validate(initialValue.english) && validate(initialValue.transcription) && validate(initialValue.russian)
 
-
+    const validateEn = validate(initialValue.english);
+    const validateTr = validate(initialValue.transcription);
+    const validateRu = validate(initialValue.russian);
 
 
 
@@ -42,9 +55,9 @@ function TableString(props) {
         <div className='table_string-container'>
 
             <div className={'table_string ' + (props.index % 2 === 0 ? "table_gray" : '')}>
-                {isEditMode ? <input className={validateEn ? 'table_input' : 'empty_input'} type="text" defaultValue={props.en} onChange={handleChange} name="english"></input> : <div className='table_en'>{props.en}</div>}
-                {isEditMode ? <input className='table_input' type="text" defaultValue={props.transcription} name="transcript"></input> : <div className='table_transcription'>{props.transcription}</div>}
-                {isEditMode ? <input className='table_input' type="text" defaultValue={props.ru} name="russian"></input> : <div className='table_ru'>{props.ru}</div>}
+                {isEditMode ? <input className={validateEn ? 'table_input' : 'empty_input'} type="text" defaultValue={props.en} onChange={getValue} name="english"></input> : <div className='table_en'>{props.en}</div>}
+                {isEditMode ? <input className={validateTr ? 'table_input' : 'empty_input'} type="text" defaultValue={props.transcription} onChange={getValue} name="transcription"></input> : <div className='table_transcription'>{props.transcription}</div>}
+                {isEditMode ? <input className={validateRu ? 'table_input' : 'empty_input'} type="text" defaultValue={props.ru} onChange={getValue} name="russian"></input> : <div className='table_ru'>{props.ru}</div>}
                 <div className='table_btn-container'>
                     {isEditMode ?
                         <>
