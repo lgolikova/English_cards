@@ -13,6 +13,7 @@ function Game(props) {
         sumLearnd(list[cardIndex].id);
     }
 
+    //слайдер    
     const [cardIndex, setCardIndex] = useState(0);
 
     const Next = () => {
@@ -34,12 +35,14 @@ function Game(props) {
         setIsCheckMode(false);
     };
 
+    //фокус на кнопке    
     const ref = useRef(null);
 
     useEffect(() => {
         ref.current.focus();
     }, [list[cardIndex].en]);
 
+    //счетчик изученных слов
     const [learned, setLearned] = useState(0);
     const [learntId, setLearntId] = useState([])
 
