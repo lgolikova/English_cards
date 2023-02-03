@@ -13,10 +13,6 @@ function TableString(props) {
         setIsEditMode(!isEditMode);
     }
 
-
-    const [btnDisabled, setBtnDisabled] = useState(false);
-
-
     const [initialValue, setInitialValue] = useState({});
 
     useEffect(() => {
@@ -49,7 +45,10 @@ function TableString(props) {
     const validateTr = validate(initialValue.transcription);
     const validateRu = validate(initialValue.russian);
 
-
+    const [btnDisabled, setBtnDisabled] = useState(false);
+    if (!validateFlag) {
+        setBtnDisabled(true);
+    }
 
     return (
         <div className='table_string-container'>
