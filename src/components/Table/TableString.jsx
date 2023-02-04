@@ -57,6 +57,7 @@ function TableString(props) {
             alert('Не все поля заполнены корректно!');
         } else {
             console.log(initialValue);
+            setIsEditMode(!isEditMode);
         }
 
     }
