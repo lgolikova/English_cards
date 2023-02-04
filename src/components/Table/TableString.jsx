@@ -21,16 +21,14 @@ function TableString(props) {
             transcription: props.transcription,
             russian: props.ru,
         })
-    }, [props.en, props.transcription, props.ru])
+    }, [props.en, props.transcription, props.ru]);
 
     function getValue(e) {
-        e.preventDefault()
-        const copyInitialValue = { ...initialValue }
-        copyInitialValue[e.target.name] = e.target.value
-        setInitialValue(copyInitialValue)
+        e.preventDefault();
+        const copyInitialValue = { ...initialValue };
+        copyInitialValue[e.target.name] = e.target.value;
+        setInitialValue(copyInitialValue);
     }
-
-    console.log(initialValue);
 
     function validate(value) {
         if (value !== '') {
@@ -54,6 +52,14 @@ function TableString(props) {
         }
     }
 
+    const handleSave = () => {
+        if (initialValue.english.match(/[а-яА-Я]/g) || initialValue.russian.match(/[a-zA-Z]/g)) {
+            alert('Не все поля заполнены корректно!');
+        } else {
+            console.log(initialValue);
+        }
+
+    }
 
     return (
         <div className='table_string-container'>
@@ -65,7 +71,7 @@ function TableString(props) {
                 <div className='table_btn-container'>
                     {isEditMode ?
                         <>
-                            <button className='btn-save' disabled={btnDisabled}>Save</button>
+                            <button className='btn-save' onClick={handleSave} disabled={btnDisabled}>Save</button>
                             <button className='btn-cancel' onClick={handleCancel}>Cancel</button>
                         </> :
                         <>
